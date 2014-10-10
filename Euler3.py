@@ -16,4 +16,4 @@ while n != 1:
         i += 2
         
 print prime_factors[-1] 
-# only print the last prime factor
+# only print the largest prime factor
