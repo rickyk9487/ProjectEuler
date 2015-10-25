@@ -37,12 +37,12 @@ def findAmicablePair(N):
 
     return amicDict
 
-def main():
+def main(N):
     start = time.time()
-    print "Sum of Amicable numbers under 10000 is", sum(findAmicablePair(10000).keys())
+    print "Sum of Amicable numbers under %d is", %(N, sum(findAmicablePair(N).keys()))
     elapsed = time.time() - start
     print "Found in %.2f seconds" %elapsed
 
 if __name__ == "__main__":
-    main()
+    main(10000)
     
