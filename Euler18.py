@@ -42,13 +42,13 @@ Ricky Kwok, rickyk9487@gmail.com, 2014-10-24
 def get_max_path(tri_array, depth):
     """ Returns the maximum path for each node by computing the maximum
         path of each of the two children starting from bottom up. """
-    max_path = [0]*len(tri_array)
-    max_path[depth*(depth-1)/2:depth*(depth+1)/2] = tri_array[depth*(depth-1)/2:depth*(depth+1)/2]
-    for r in range(depth-1, 0, -1):
+    max_path = [0] * len(tri_array)
+    max_path[depth * (depth-1) / 2: depth * (depth+1) / 2] = tri_array[depth * (depth-1) / 2: depth * (depth + 1) / 2]
+    for r in range(depth - 1, 0, -1):
         for c in range(r):
             # Iterates from the bottom-most row, left to rigth
-            max_child = max(max_path[r*(r+1)/2+c],max_path[r*(r+1)/2+c+1])
-            max_path[r*(r-1)/2+c] = tri_array[r*(r-1)/2+c] + max_child
+            max_child = max(max_path[r * (r + 1) / 2 + c], max_path[r * (r + 1) / 2 + c + 1])
+            max_path[r * (r - 1) / 2 + c] = tri_array[r * (r - 1) / 2 + c] + max_child
     return max(max_path)
 
 def triangle_to_array(triangle):
