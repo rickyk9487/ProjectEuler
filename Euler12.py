@@ -39,19 +39,19 @@ def get_divisors(n):
     divisors_cnt, i, m = 1, 3, n
     if n % 2 == 0:
         div_2_cnt = 0
-        m = n/2
+        m = n / 2
         while m % 2 == 0 and m > 1:
             # counting powers of 2.
             div_2_cnt += 1
-            m = m/2
-        divisors_cnt *= div_2_cnt+1
+            m = m / 2
+        divisors_cnt *= div_2_cnt + 1
         
     while i <= n and m > 1:
         # counting powers of i, where i is odd
         div_n_cnt = 0
         while m % i == 0 and m > 1:
             div_n_cnt += 1
-            m = 1.0*m/i
+            m = 1.0 * m / i
         else:
             divisors_cnt *= (div_n_cnt + 1)
             i += 2
@@ -65,7 +65,7 @@ def main():
     while left*right < 500:
         n += 1
         left, right = right, get_divisors(n)
-    print n*(n-1)/2
+    print n * (n - 1) / 2
     
 if __name__ == "__main__":
     main()
